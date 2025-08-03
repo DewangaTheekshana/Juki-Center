@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Amc\New folder\java-ui-dashboard-004-main\java-ui-dashboard-004-main\part 3\amc\dist\ui-dashboard-004.jar</jar>
+  <outfile>C:\Users\Theekshana\OneDrive\Desktop\AMC\AMC Store.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\Theekshana\Downloads\WhatsApp Image 2025-08-02 at 4.21.25 PM-modified.ico</icon>
+  <classPath>
+    <mainClass>com.raven.form.login</mainClass>
+    <cp>lib/TimingFramework-0.55.jar</cp>
+    <cp>lib/miglayout-4.0.jar</cp>
+    <cp>lib/mysql-connector-j-8.3.0.jar</cp>
+    <cp>lib/flatlaf-3.1.1.jar</cp>
+  </classPath>
+  <jre>
+    <path>C:\Program Files\Java\jre1.8.0_202</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>
