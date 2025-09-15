@@ -21,7 +21,9 @@ This is a Java Swing-based desktop application developed using NetBeans. It prov
 
 **Spear Part Page**
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/4d3a99e5-6e11-46a8-933f-d6da29d81546" />
+<img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/bb73e889-1439-4c3a-a485-8b23a54b2f6a" />
+
+
 
 
 ## 🛠 Technologies Used
