@@ -1,5 +1,7 @@
 package com.raven.swing;
 
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JTable;
@@ -15,20 +17,67 @@ public class TableColumn extends JTable {
         setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
             @Override
-            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean isSelected, boolean hasFocus, int row, int column) {
                 return new TableCell(o);
             }
         });
     }
 
     @Override
-    public Component prepareRenderer(TableCellRenderer tcr, int i, int i1) {
+    public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
         TableCell.CellType celLType = TableCell.CellType.CENTER;
-        if (i1 == 0) {
+        if (column == 0) {
             celLType = TableCell.CellType.LEFT;
-        } else if (i1 == getColumnCount() - 1) {
+        } else if (column == getColumnCount() - 1) {
             celLType = TableCell.CellType.RIGHT;
         }
-        return new TableCell(getValueAt(i, i1), isCellSelected(i, i1), celLType);
+
+        Object value = getValueAt(row, column);
+        TableCell cell = new TableCell(value, isCellSelected(row, column), celLType);
+
+        // --- find the view index of the Qty column by header name (case-insensitive) ---
+        int qtyViewIndex = -1;
+        for (int i = 0; i < getColumnCount(); i++) {
+            Object headerVal = getColumnName(i);
+            if (headerVal != null && headerVal.toString().trim().equalsIgnoreCase("qty")) {
+                qtyViewIndex = i;
+                break;
+            }
+        }
+
+        // --- get the qty value for this row (if the qty column exists) ---
+        Object qtyValue = null;
+        if (qtyViewIndex >= 0) {
+            try {
+                qtyValue = getValueAt(row, qtyViewIndex);
+            } catch (Exception ex) {
+                qtyValue = null;
+            }
+        }
+
+        // --- determine out-of-stock ---
+        boolean outOfStock = false;
+        if (qtyValue != null) {
+            String qs = qtyValue.toString().trim();
+            if (qs.equalsIgnoreCase("out of stock")) {
+                outOfStock = true;
+            } else {
+                try {
+                    double dd = Double.parseDouble(qs);
+                    if (dd <= 0.0) outOfStock = true;
+                } catch (Exception ex) {
+                    // not a number
+                }
+            }
+        }
+
+        // --- if out of stock, color the whole row red ---
+        if (outOfStock) {
+            cell.setOpaque(true);
+            cell.setBackground(new Color(0xE74C3C)); // red
+            cell.setForeground(Color.WHITE);
+        }
+
+        return cell;
     }
 }

@@ -17,12 +17,12 @@ import java.sql.ResultSet;
  */
 public class addLocation extends javax.swing.JDialog {
 
-    private AddSpearPart addSpearPart;
+    private SpearPart addSpearPart;
 
     /**
      * Creates new form addLocation
      */
-    public addLocation(java.awt.Frame parent, boolean modal, AddSpearPart addSpearPart) {
+    public addLocation(java.awt.Frame parent, boolean modal, SpearPart addSpearPart) {
         super(parent, modal);
         initComponents();
 

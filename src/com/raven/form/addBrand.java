@@ -17,12 +17,12 @@ import javax.swing.JTextField;
  */
 public class addBrand extends javax.swing.JDialog {
     
-    private AddSpearPart addSpearPart;
+    private SpearPart addSpearPart;
 
     /**
      * Creates new form NewJDialog
      */
-    public addBrand(java.awt.Frame parent, boolean modal, AddSpearPart addSpearPart) {
+    public addBrand(java.awt.Frame parent, boolean modal, SpearPart addSpearPart) {
         super(parent, modal);
         initComponents();
         
@@ -191,6 +191,7 @@ public class addBrand extends javax.swing.JDialog {
             }
             
         } catch (Exception e) {
+            e.printStackTrace();
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

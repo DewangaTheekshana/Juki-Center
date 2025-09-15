@@ -21,7 +21,9 @@ public class MySQL {
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com/sql12793231","sql12793231","MzfsDXblD2");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/amc","root","@Duleekaduleeka123");
+//            connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech/freedb_amc_db","freedb_Akash","w*n3G#25g$cK9H%");
+//            connection = DriverManager.getConnection("jdbc:mysql://sql100.infinityfree.com/if0_39610764_amc","if0_39610764","Dewanga123");
         } catch (Exception e) {
             e.printStackTrace(); 
         }
