@@ -17,7 +17,7 @@ This is a Java Swing-based desktop application developed using NetBeans. It prov
 
 **Dashboard**
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/58e5f027-e060-462b-bdd4-c5fcae2c9fb7" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/93639c57-2249-4382-a396-0d06d4204fa1" />
 
 **Spear Part Page**
 
